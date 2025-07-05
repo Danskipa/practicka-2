@@ -1,5 +1,38 @@
 .btn {
-  background-color: rgb(4, 230, 147);
-  border-radius: 5px;
-  padding: 1em, 2em;
+  background-color: teal;
+  border-radius: 4px;
+  padding: 1em 2em;
+  color: #ffffff;
+  font-size: 20px;
+  border: 0px solid black;
+  position: relative;
+  overflow: hidden;
+}
+.btn:hover {
+  background-color: pink;
+}
+.btn::before,
+.btn::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-image: url(../img/android.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  left: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 250ms;
+}
+.btn::after {
+  background-image: url(../img/mug.svg);
+  transform: translateY(200%);
+}
+.btn:hover::before {
+  transform: translateY(-300%);
+}
+.btn:hover::after {
+  transform: translateY(-50%);
 }
